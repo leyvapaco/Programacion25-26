@@ -1,8 +1,8 @@
-package ud1.tarea6;
+package ud1.ejemplos;
 
 import java.util.Scanner;
 
-public class Ej6_4b {
+public class VocalOConsonante {
 public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
