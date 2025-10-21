@@ -8,9 +8,9 @@ public static void main(String[] args) {
 	boolean acertado=false;
 	String secreta="daw";
 	String palabra;
-	int intentos=3;
+	int intentos=3; //máximo número de intentos para acertar
 	
-	do {
+	do { //Se repite mientras no acierte o no haya agotado los intentos
 	
 		System.out.println("Introduce la contraseña");
 		palabra=sc.next();

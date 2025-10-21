@@ -23,6 +23,10 @@ public static void main(String[] args) {
 		
 		sevillano=(ciudad.equals("Sevilla"))?true:false;
 		
+	/*  Lo siguiente también funcionaría, dado que la función equals ya de por sí devuelve true o false
+	 * 	sevillano=(ciudad.equals("Sevilla"));
+	 */
+		
 		//Solo pasan los sevillanos mayores de edad
 		
 		if (mayorDeEdad && sevillano)

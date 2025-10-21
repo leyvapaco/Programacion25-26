@@ -2,7 +2,7 @@ package ejemplos;
 import java.util.Scanner;
 
 //Prueba de operadores ternarios
-//Sólo pasas si eres mayor de edad 
+//Sólo puedes pasar si eres mayor de edad 
 
 public class Ternarias1{
 public static void main(String[] args) {
@@ -14,8 +14,9 @@ public static void main(String[] args) {
 		System.out.println("Introduce tu edad");
 		edad=sc.nextByte();
 		
+		//Si la condición a comprobar es verdadera, asigna a mayorDeEdad el valor true, si no, false
 		mayorDeEdad=(edad>18)?true:false;
-		
+				
 		if (mayorDeEdad)
 			System.out.println("Eres mayor de edad");
 		else 

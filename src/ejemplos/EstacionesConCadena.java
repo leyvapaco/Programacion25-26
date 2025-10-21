@@ -2,7 +2,7 @@ package ejemplos;
 
 import java.util.Scanner;
 
-public class Estaciones2 {
+public class EstacionesConCadena {
 public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
 	
