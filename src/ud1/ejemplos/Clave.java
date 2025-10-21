@@ -1,6 +1,8 @@
 package ud1.ejemplos;
 import java.util.Scanner;
 
+//Usando bucle DO-WHILE
+
 public class Clave {
 public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
