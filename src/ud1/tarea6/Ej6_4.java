@@ -6,27 +6,18 @@ public class Ej6_4 {
 public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
-		byte num1; 
-		byte num2; 
-		byte menor=0;
-		
-		System.out.println("Introduce el primer número:");
-		num1=sc.nextByte();
-		
-		System.out.println("Introduce el primer número:");
-		num2=sc.nextByte();
-		
-		int comparacion =(num1<num2)?-1:1;
+		char primeraLetra; 
 
-	     switch (comparacion) {
-         case -1: // num1 < num2
-             menor = num1;
-             break;
-         case 1: // num1 > num2
-             menor = num2;
-             break;
-     }
+		System.out.println("Introduce la letra");
+		primeraLetra=sc.next().toLowerCase().charAt(0);
 		
-		System.out.println("El menor es: "+menor);
+	    switch (primeraLetra) {
+        case 'a','e','i','o','u': 
+        	 System.out.println("La primera letra es vocal");
+             break;
+         default:
+        	 System.out.println("Es consonante");
+     }
+
 	}
 }
