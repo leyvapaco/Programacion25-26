@@ -1,6 +1,8 @@
 package ud1.tarea5b;
 import java.util.Scanner;
 
+//Solución a Ej5 sando bucles
+
 public class Ej5b_4b {
 
 	public static void main(String[] args) {
