@@ -6,19 +6,17 @@ public class VocalOConsonante {
 public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
-		byte num1; 
-		byte num2; 
-		byte menor;
+		char letra=sc.next().toLowerCase().charAt(0);
 		
-		System.out.println("Introduce el primer número:");
-		num1=sc.nextByte();
-		
-		System.out.println("Introduce el primer número:");
-		num2=sc.nextByte();
-		
-		menor =(num1<num2)?num1:num2;
-
-		
-		System.out.println("El menor es: "+menor);
+		switch (letra) {
+			case 'a','e','i','o','u':
+				System.out.println("Es una vocal");
+			break;
+			default:
+				System.out.println("Es una consonante");
+				
+		}
+		//realmente deberíamos poner un case con todas las
+		//consonantes si fuesemos un poco menos perros
 	}
 }
