@@ -16,13 +16,13 @@ public static void main(String[] args) {
 		System.out.println("Introduce el primer número:");
 		num2=sc.nextByte();
 		
-		int comparacion =(num1<num2)?-1:1;
+		char comparacion =(num1<num2)?'1':'2';
 
 	     switch (comparacion) {
-         case -1: // num1 < num2
+         case '1': // num1 < num2
              menor = num1;
              break;
-         case 1: // num1 > num2
+         case '2': // num1 > num2
              menor = num2;
              break;
      }
