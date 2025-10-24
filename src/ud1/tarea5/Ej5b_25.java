@@ -7,6 +7,7 @@ public class Ej5b_25 {
         Scanner sc = new Scanner(System.in);
         float precioComida = 0.0f;
         float precioBebida = 0.0f;
+        boolean continuar=true;  //Si alguna de las opciones introducidas no es válida, no calcularemos el total
 
         System.out.println("¿Qué has tomado de comer? (palmera, donut, pitufo)");
         String comida = sc.nextLine().toLowerCase();
@@ -27,27 +28,33 @@ public class Ej5b_25 {
                 		precioComida = 1.60f;
                 		}else {
                 				System.out.println("Opción de pitufo no válida.");
-                				return;
+                				continuar=false;
                 		}
                 break;
             default:
                 System.out.println("Opción de comida no válida.");
-                return;
+                continuar=false;
+        }
+        
+        if (continuar) {
+
+        	System.out.println("¿Qué has tomado de bebida? (zumo, café)");
+        	String bebida = sc.nextLine().toLowerCase();
+
+        	if (bebida.equals("zumo")) {
+        		precioBebida = 1.50f;
+        	} else if (bebida.equals("café")) {
+        		precioBebida = 1.20f;
+        	} else {
+        		System.out.println("Opción de bebida no válida.");
+        		continuar=false;
+         
+        	}
         }
 
-        System.out.println("¿Qué has tomado de bebida? (zumo, café)");
-        String bebida = sc.nextLine().toLowerCase();
-
-        if (bebida.equals("zumo")) {
-            precioBebida = 1.50f;
-        } else if (bebida.equals("café")) {
-            precioBebida = 1.20f;
-        } else {
-            System.out.println("Opción de bebida no válida.");
-            return;
-        }
-
+        if (continuar) {
         float total = precioComida + precioBebida;
         System.out.printf("El precio total del desayuno es: "+ total +" euros");
+        }
     }
 }
