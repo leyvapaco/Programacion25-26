@@ -13,20 +13,17 @@ public class Ej8_2 {
 
         System.out.println("Introduce las edades de los alumnos (edad negativa para terminar):");
 
-     
         do  {
             System.out.print("Edad del alumno : ");
             edad=scanner.nextInt();
   
-            if (edad>0) {
-            
+            if (edad>0) {          
             	if (edad >= 18) 
-            		mayoresEdad++;
-           
+            		mayoresEdad++; 
+            	
                 sumaEdades += edad;
                 contadorAlumnos++;
             }
-
         }while (edad>0);
 
         if (contadorAlumnos > 0) {

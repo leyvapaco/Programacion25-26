@@ -19,18 +19,14 @@ public class Ej8_2b {
         
         while (edad>0) {
   
-            if (edad>0) {
-            
-            	if (edad >= 18) 
-            		mayoresEdad++;
+            if (edad >= 18) 
+            	mayoresEdad++;
            
-                sumaEdades += edad;
-                contadorAlumnos++;
-            }
-            
+            sumaEdades += edad;
+            contadorAlumnos++;
+      
             System.out.print("Edad del alumno : ");
             edad=scanner.nextInt();
-
         };
 
         if (contadorAlumnos > 0) {
