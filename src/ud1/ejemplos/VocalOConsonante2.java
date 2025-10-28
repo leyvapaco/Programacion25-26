@@ -1,12 +1,15 @@
 package ud1.ejemplos;
 
 import java.util.Scanner;
+// Es idéntico a la versión anterior
 
 public class VocalOConsonante2 {
+	
 public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
 		char letra=sc.next().toLowerCase().charAt(0);
+		
 		
 		System.out.println("Introduce una letra");
 		
