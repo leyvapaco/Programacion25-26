@@ -2,6 +2,7 @@ package ud1.tarea5;
 import java.util.Scanner;
 
 public class Ej5_12 {
+	
 	  public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
 

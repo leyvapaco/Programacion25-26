@@ -3,6 +3,7 @@ package ud1.tarea5;
 import java.util.Scanner;
 
 public class Ej5b_25 {
+	
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         float precioComida = 0.0f;

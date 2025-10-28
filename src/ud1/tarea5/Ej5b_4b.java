@@ -2,7 +2,7 @@ package ud1.tarea5
 ;
 import java.util.Scanner;
 
-//Solución a Ej5 usando bucles
+//Solución a Ej5 usando bucles.
 
 public class Ej5b_4b {
 
