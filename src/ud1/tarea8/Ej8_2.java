@@ -19,7 +19,7 @@ public class Ej8_2 {
   
             if (edad>0) {          
             	if (edad >= 18) 
-            		mayoresEdad++; 
+            		mayoresEdad++;
             	
                 sumaEdades += edad;
                 contadorAlumnos++;

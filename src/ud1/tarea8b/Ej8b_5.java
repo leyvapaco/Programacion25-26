@@ -1,4 +1,4 @@
-package tarea8b;
+package ud1.tarea8b;
 
 import java.util.Scanner;
 

@@ -1,8 +1,8 @@
-package tarea8b;
+package ud1.tarea8b;
 
 import java.util.Scanner;
 
-public class Ej8b_9 {
+public class Ej8b_9b {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -14,13 +14,14 @@ public class Ej8b_9 {
         int base = (altura / 2) + 1;
 
         // Pintar el palo vertical
-        for (int i = 1; i < altura; i++) {
-            System.out.println("*");
-        }
-
-        // Pintar el palo horizontal
-        for (int j = 0; j < base; j++) {
-            System.out.print("*");
+        for (int i = 1; i <= altura; i++) {
+           if (i<altura)
+        	   System.out.println("*");
+           else  
+        	   for (int j = 1; j <= base; j++) {
+               System.out.print("*");
+           }
+        	   
         }
 
         sc.close();
