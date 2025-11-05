@@ -2,6 +2,8 @@ package ud2.ejemplos;
 
 import java.util.Scanner;
 
+import ud3.ejemplos.DivisionPorCeroException;
+
 //Excepción personalizada
 class DivisionPorCeroException extends Exception {
  public DivisionPorCeroException(String mensaje) {

@@ -20,8 +20,5 @@ public class Ejemplo6 {
 	
 		System.out.println("a/b="+c);
 	}
-	
-
-
 }
 
