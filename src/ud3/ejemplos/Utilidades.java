@@ -3,11 +3,20 @@ package ud3.ejemplos;
 import java.util.Scanner;
 
 
-
 public class Utilidades {
 	
  static double suma(double a, double b) {
 	 return a+b;
+ }
+ 
+ static double resta(double a, double b) throws RestaException {
+	 if(b>a)
+		 throw new RestaException("Resta negativa");
+	 return a-b;
+ }
+ 
+ static double producto(double a, double b) {
+	 return a*b;
  }
 	
  static double divide(double a, double b) throws DivPorCeroException {
@@ -17,11 +26,11 @@ public class Utilidades {
 	 	 return a/b;
  }
  
- static double calcular(double a, double b, char op) throws DivPorCeroException {
+ static double calcular(double a, double b, char op) throws DivPorCeroException,RestaException {
      switch (op) {
          case '+': return suma(a,b);
-         case '-': return a - b; //Implementar la función resta
-         case '*': return a * b; //Implementar la función producto
+         case '-': return resta(a,b);
+         case '*': return producto(a,b);
          case '/':return divide(a,b);
          default:
              throw new IllegalArgumentException("Operación desconocida.");

@@ -9,6 +9,14 @@ public DivPorCeroException(String mensaje) {
 }
 }
 
+//Excepción personalizada
+class RestaException extends Exception {
+public RestaException(String mensaje) {
+super(mensaje); 
+}
+}
+
+
 public class CalculadoraConFunciones {
  public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
@@ -27,7 +35,10 @@ public class CalculadoraConFunciones {
          System.out.println("Resultado: " + resultado);
      } catch (DivPorCeroException e) {
          System.out.println("Error: " + e.getMessage());
-     } catch (Exception e) {
+     } 
+     catch (RestaException e) {
+         System.out.println("Error: " + e.getMessage());
+     }catch (Exception e) {
          System.out.println("Operación no válida.");
      }
 
