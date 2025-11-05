@@ -2,14 +2,14 @@ package ud2.ejemplos;
 
 import java.util.Scanner;
 
-import ud3.ejemplos.DivisionPorCeroException;
 
 //Excepción personalizada
 class DivisionPorCeroException extends Exception {
- public DivisionPorCeroException(String mensaje) {
-     super(mensaje);
- }
+ 	 public DivisionPorCeroException(String mensaje) {
+	     super(mensaje);
+	 }
 }
+
 
 public class CalculadoraControlada {
  public static void main(String[] args) {

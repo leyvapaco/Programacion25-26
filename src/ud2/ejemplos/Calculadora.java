@@ -2,8 +2,6 @@ package ud2.ejemplos;
 
 import java.util.Scanner;
 
-import ud3.ejemplos.DivisionPorCeroException;
-
 
 public class Calculadora {
  public static void main(String[] args) {
