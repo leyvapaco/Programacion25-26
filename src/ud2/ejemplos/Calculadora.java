@@ -20,13 +20,13 @@ public class Calculadora {
      double resultado = calcular(num1, num2, operacion);
      System.out.println("Resultado: " + resultado);
      */
-     /*
+     
      try {
          double resultado = calcular(num1, num2, operacion);
          System.out.println("Resultado: " + resultado);
      } catch (Exception e) {
          System.out.println(e.getMessage());
-     }*/
+     }
 
      sc.close();
  }

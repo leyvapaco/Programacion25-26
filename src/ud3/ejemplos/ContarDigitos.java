@@ -7,13 +7,12 @@ public class ContarDigitos {
     	while (numero/10>0) {
     		contador++;
     		numero=numero/10;
-    		System.out.println(numero);
     	}
         return contador;
     }
 
     public static void main(String[] args) {
-        int numero = 123456;
+        int numero = 1234567;
         System.out.println("Cantidad de dígitos: " + contar(numero));
     }
 }

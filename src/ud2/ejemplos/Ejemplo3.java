@@ -8,8 +8,8 @@ public class Ejemplo3 {
 		
 		try {
 			c=a/b;
-		}catch (Exception e) {
-			System.out.println("Primer catch");
+//		}catch (Exception e) {    La captura de Exception siempre debe ser la última
+//			System.out.println("Primer catch");
 
 		}catch (ArithmeticException e) {
 			System.out.println("No se puede dividir por cero");
