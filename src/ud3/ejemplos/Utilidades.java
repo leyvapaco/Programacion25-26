@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class Utilidades {
 	
+static boolean validaOperacion(Character op) {
+		return true; //Ejercicio: Modificar para que compruebe si la operación es una letra
+	 }
+			
+	
  static double suma(double a, double b) {
 	 return a+b;
  }
@@ -26,6 +31,7 @@ public class Utilidades {
 	 	 return a/b;
  }
  
+  
  static double calcular(double a, double b, char op) throws DivPorCeroException,RestaException {
      switch (op) {
          case '+': return suma(a,b);

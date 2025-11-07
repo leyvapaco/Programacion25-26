@@ -16,6 +16,8 @@ super(mensaje);
 }
 }
 
+//Ejercicio: Crear una excepción propia para el caso en que la operción no sea valida
+
 
 public class CalculadoraConFunciones {
  public static void main(String[] args) {
@@ -28,8 +30,10 @@ public class CalculadoraConFunciones {
      double num2 = sc.nextDouble();
 
      System.out.print("Elige operación (+, -, *, /): ");
-     char operacion = sc.next().charAt(0);
-
+     Character operacion = sc.next().charAt(0); //Cambiado de char a Character para poder hacer el Ejercicio
+     
+     //Ejercicio: Capturar la nueva excepción
+     
      try {
          double resultado = Utilidades.calcular(num1, num2, operacion);
          System.out.println("Resultado: " + resultado);
