@@ -32,7 +32,7 @@ public class CalculadoraConFunciones {
      System.out.print("Elige operación (+, -, *, /): ");
      Character operacion = sc.next().charAt(0); //Cambiado de char a Character para poder hacer el Ejercicio
      
-     //Ejercicio: Capturar la nueva excepción
+     //Capturar la nueva excepción
      
      try {
          double resultado = Utilidades.calcular(num1, num2, operacion);

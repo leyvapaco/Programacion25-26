@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Utilidades {
 	
 static boolean validaOperacion(Character op) {
-		return true; //Ejercicio: Modificar para que compruebe si la operación es una letra
+		return true; //Ejercicio: Modificar para que compruebe que la operación no es dígito ni letra
 	 }
 			
 	
