@@ -5,6 +5,7 @@ public class ClaseCaracter {
 	
 		Character letra='p';
 		Character digito='1';
+		Character operacion='*';
 		
 		System.out.println("salida 1: "+Character.isDigit(letra));
 		System.out.println("salida 2: "+Character.isDigit(digito));
@@ -15,7 +16,8 @@ public class ClaseCaracter {
 		System.out.println("salida 5: "+Character.isUpperCase(letra));
 		
 		System.out.println("salida 6: "+Character.isLetterOrDigit(letra));
-		System.out.println("salida 7: "+Character.getNumericValue(digito));
+		System.out.println("salida 7: "+Character.isLetterOrDigit(operacion));
+		System.out.println("salida 8: "+Character.getNumericValue(digito));
 		
 }
 }
