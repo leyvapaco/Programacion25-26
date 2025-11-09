@@ -12,7 +12,6 @@ public class Wrapper {
 		Double decimalW = 3.14;
 		Boolean continuarW = true;
 	
-	
 		naturalW=10; //Conversión de tipo primitivo a objeto wrapper (boxing)
 		System.out.println("salida 1: "+naturalW);
 		
