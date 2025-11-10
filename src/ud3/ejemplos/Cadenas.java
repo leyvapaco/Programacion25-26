@@ -9,6 +9,7 @@ public static void main(String[] args) {
 	System.out.println(cad1+" "+cad2);
 	
 	System.out.println(cad1.length());
+	
 	/*
 	for (int i=1;i<=cad1.length();i++)
 		System.out.println("Hola");*/
