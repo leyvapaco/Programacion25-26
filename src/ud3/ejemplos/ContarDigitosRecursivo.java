@@ -5,7 +5,7 @@ public class ContarDigitosRecursivo {
         if (numero == 0) {
             return 0;
         }
-        return 1 + contar(numero / 10);
+        return 1 + contar(numero/10);
     }
 
     public static void main(String[] args) {
