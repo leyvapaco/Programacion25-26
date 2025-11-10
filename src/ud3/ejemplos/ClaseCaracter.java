@@ -3,7 +3,7 @@ package ud3.ejemplos;
 public class ClaseCaracter {
 	public static void main(String[] args) {
 	
-		Character letra='p';
+		Character letra='P';
 		Character digito='1';
 		Character operacion='*';
 		
@@ -17,7 +17,7 @@ public class ClaseCaracter {
 		
 		System.out.println("salida 6: "+Character.isLetterOrDigit(letra));
 		System.out.println("salida 7: "+Character.isLetterOrDigit(operacion));
-		System.out.println("salida 8: "+Character.getNumericValue(digito));
+		System.out.println("salida 8: "+Character.getNumericValue('1'));
 		
 }
 }
