@@ -1,6 +1,9 @@
 package ud3.ejemplos;
 
-public class ClaseArray {
+//Consulta los métodos de String
+//https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
+
+public class ClaseStringEjemplos {
     public static void main(String[] args) {
         String entrada = "  manzana, pera , plátano ,  kiwi  ";
 

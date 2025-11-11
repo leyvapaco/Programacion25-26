@@ -1,6 +1,9 @@
 package ud3.ejemplos;
 
-public class ClaseCaracter {
+//Consulta los métodos de Char
+//https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html
+
+public class ClaseCaracterEjemplos {
 	public static void main(String[] args) {
 	
 		Character letra='P';
