@@ -17,7 +17,12 @@ super(mensaje);
 }
 
 //Ejercicio: Crear una excepción propia para el caso en que la operción no sea valida
-
+//Excepción personalizada
+class OpNoValidaException extends Exception {
+public OpNoValidaException(String mensaje) {
+super(mensaje); 
+}
+}
 
 public class CalculadoraConFunciones {
  public static void main(String[] args) {
@@ -32,18 +37,30 @@ public class CalculadoraConFunciones {
      System.out.print("Elige operación (+, -, *, /): ");
      Character operacion = sc.next().charAt(0); //Cambiado de char a Character para poder hacer el Ejercicio
      
-     //Capturar la nueva excepción
-     
+    /* 
      try {
-         double resultado = Utilidades.calcular(num1, num2, operacion);
+    	//Capturar la nueva excepción
+         Utilidades.validaOperacion(operacion);
+     }catch (OpNoValidaException e) {
+    	 System.out.println("Error: " + e.getMessage());
+     }*/
+     
+         
+     try {
+    	 Utilidades.validaOperacion(operacion);
+    	 double resultado = Utilidades.calcular(num1, num2, operacion);
          System.out.println("Resultado: " + resultado);
-     } catch (DivPorCeroException e) {
+     } 
+     catch (OpNoValidaException e) {
+         System.out.println("Error: " + e.getMessage());
+     } 
+     catch (DivPorCeroException e) {
          System.out.println("Error: " + e.getMessage());
      } 
      catch (RestaException e) {
          System.out.println("Error: " + e.getMessage());
-     }catch (Exception e) {
-         System.out.println("Operación no válida.");
+    }catch (Exception e) {
+         System.out.println("Fin del programa");
      }
 
      sc.close();
