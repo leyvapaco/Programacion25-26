@@ -1,6 +1,6 @@
 package ud3.ejemplos;
 
-public class ProcesarTextoEjemplos {
+public class ClaseArray {
     public static void main(String[] args) {
         String entrada = "  manzana, pera , plátano ,  kiwi  ";
 
