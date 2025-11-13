@@ -5,9 +5,12 @@ public class StringACharArray {
 	String saludo = "Hola";
 	char[] caracteres = saludo.toCharArray();
 
-	for (int i=0;i<=3;i++) {
+
+	for (int i=0;i<caracteres.length;i++) {
 	    System.out.print(caracteres[i]);
 	}
+	
+	
 
 	System.out.println();
 	
