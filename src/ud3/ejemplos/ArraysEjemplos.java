@@ -18,11 +18,13 @@ public class ArraysEjemplos {
 	nombres[2] = "Carlos";
 	
 	System.out.println(nombres[1]);
-	ArraysEjemplos.sort(nombres);
+	Arrays.sort(nombres);
 	System.out.println(nombres[1]);	
 	
 	// Array con valores definidos directamente
 	String[] colores = {"Rojo", "Verde", "Azul"};
+	Arrays.sort(colores);
+	
 	
 	for (int i = 0; i < colores.length; i++) {
 	    System.out.println("Color " + i + ": " + colores[i]);
