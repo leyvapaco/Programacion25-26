@@ -5,8 +5,7 @@ public class Ej6 {
 	     char c = Character.toLowerCase(letra);
 
 	        switch (c) {
-	            case 'a':
-	            case 'e':
+	            case 'a','e':
 	            case 'i':
 	            case 'o':
 	            case 'u':
@@ -17,7 +16,7 @@ public class Ej6 {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(esVocal('a'));
+		System.out.println(esVocal('A'));
 	}
 
 }

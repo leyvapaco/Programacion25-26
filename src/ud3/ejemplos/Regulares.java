@@ -8,15 +8,15 @@ public class Regulares {
 public static void main(String[] args) {
 	
 	
-	String original = "Mi número es 123456";
+	String original = "Mi número es 123456Q";
 	String oculto = original.replaceAll("\\d", "*");
 	System.out.println(oculto); // Mi número es ******
 
-	String dni = "12345678Z";
+	String dni = "58345678Z";
 	boolean valido = dni.matches("^\\d{8}[A-Z]$");
 	System.out.println("¿DNI válido? " + valido);
 	
-	String numero = "123456";
+	String numero = "123444456";
 	boolean soloNumeros = numero.matches("^\\d+$");
 	System.out.println("¿Solo números? " + soloNumeros);
 	
