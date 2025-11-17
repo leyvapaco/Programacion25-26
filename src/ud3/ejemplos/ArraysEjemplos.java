@@ -1,7 +1,8 @@
 package ud3.ejemplos;
 
+import java.util.Arrays;
 
-public class Arrays {
+public class ArraysEjemplos {
 	
 	public static void main(String[] args) {
 		
@@ -17,7 +18,8 @@ public class Arrays {
 	nombres[2] = "Carlos";
 	
 	System.out.println(nombres[1]);
-		
+	ArraysEjemplos.sort(nombres);
+	System.out.println(nombres[1]);	
 	
 	// Array con valores definidos directamente
 	String[] colores = {"Rojo", "Verde", "Azul"};
@@ -39,11 +41,15 @@ public class Arrays {
 	}
 	
 	Double[] notas= {3.7,6.2,9.25};
+	Double[] aprobados= new Double[notas.length];;
 	
-	System.out.println(notas[1]);
-	
-	for (Double nota:notas) {
-		System.out.println("Nota "+nota);
+	System.out.println("-----");
+	int j=0;
+	for (int i = 0; i < notas.length; i++) {
+		if (notas[i]>=5.0) {
+	        aprobados[j]=notas[i];
+			j++;}
+		
 	}
 	
 	
