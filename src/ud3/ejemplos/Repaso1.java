@@ -1,6 +1,6 @@
 package ud3.ejemplos;
 
-public class Repaso1Plantilla {
+public class Repaso1 {
 	public static void main(String[] args) {
 		
 		System.out.println(funcion1("bonito","DIA"));
@@ -16,7 +16,10 @@ public class Repaso1Plantilla {
 		String concatenadas;
 		char[] resultado;
 		
+		concatenadas=cad1.toLowerCase()+" "+cad2.toLowerCase();
 
+		resultado = concatenadas.toCharArray();
+		resultado[0]=Character.toUpperCase(concatenadas.charAt(0));
 		
 		return resultado;
 	}
@@ -29,6 +32,12 @@ public class Repaso1Plantilla {
 		String concatenadas;
 		char[] resultado;
 		
+		concatenadas=cad2+" "+cad1;
+		
+		resultado = concatenadas.toCharArray();
+		
+		for(int i=0;i<concatenadas.length();i++)
+			resultado[i]=Character.toUpperCase(resultado[i]);
 		
 		return resultado;
 	}
@@ -37,7 +46,10 @@ public class Repaso1Plantilla {
 	static int funcion3(char car, String cad) {
 		int resultado;
 		
-
+		resultado = Character.getNumericValue(car)+Integer.parseInt(cad);
+		
+		//¿Qué devolvería esto:?
+		//resultado = (int) car+Integer.parseInt(cad);
 		
 		return resultado;
 	}
