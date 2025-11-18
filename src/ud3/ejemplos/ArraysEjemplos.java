@@ -57,19 +57,21 @@ public class ArraysEjemplos {
 		Arrays.sort(colores);
 		System.out.println("Ordenado: "+Arrays.toString(colores));
 		
+		//Recorremos los elementos del array uno a uno
 		for (int i = 0; i < colores.length; i++) {
 		    System.out.println("Color [" + i + "]: " + colores[i]);
 		}
 		
 		//Copiar un array en otro más grande
 		String[] colores2 =Arrays.copyOf(colores, 6);
-		colores2[3]="Naranja"; //Ahora puedo añadir un nuevo elemento
+		colores2[3]="Naranja"; //Ahora sí puedo añadir un nuevo elemento
 		
+		//Comprobar si son iguales
 		System.out.println("\n¿Son iguales los arrays:? "+Arrays.equals(colores,colores2));
 		
 		System.out.println("\n -----");
 		
-		//Otra forma de recorres los elementos del array
+		//Otra forma de recorrer los elementos del array
 		for (String color:colores2) {
 			System.out.println("Color "+color);
 		}
@@ -90,13 +92,15 @@ public class ArraysEjemplos {
 		Double[] notas= {3.7,6.2,9.25};
 		Double[] aprobados= new Double[notas.length];
 		
-		System.out.println("\n5 -----");
+		System.out.println("\n -----");
 		
+		//Filtramos a un nuevo array los aprobados: Observa j
 		int j=0;
 		for (int i = 0; i < notas.length; i++) {
 			if (notas[i]>=5.0) {
 		        aprobados[j]=notas[i];
-				j++;} 
+				j++;
+			} 
 			
 		}
 		System.out.println(Arrays.toString(aprobados));
@@ -105,9 +109,9 @@ public class ArraysEjemplos {
 			System.out.println("Aprobado: "+elemento);
 		}
 
-		//Observar qué sucede si es double en lugar de Double
+		//Observar qué sucede si fuese double en lugar de Double
 		
-		System.out.println("\n6 -----");}
+		System.out.println("\n -----");}
 	
 	static void caracteres() {
 		//Array de caracteres
