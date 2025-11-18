@@ -2,21 +2,33 @@ package ud3.ejemplos;
 
 import java.util.Arrays;
 
+
+//Excepción propia
+class LimitesException extends Exception {
+public LimitesException(String mensaje) {
+ super(mensaje); 
+}}
+
 public class ArraysEjemplos {
-	
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 		
 		nombres();
 		//colores();
 		//edades();
+		//notas();
 		//caracteres();
 		
 		/*
 		int [] naturales= {1,2,3,4};
-		modificaArray(naturales);
+		try {
+			modificaArray(naturales,2);
+		}catch (LimitesException e) {
+		         System.out.println("Error: " + e.getMessage());
+		} 
+		//Comprobamos que el método ha modificado nuestro array naturales
 		System.out.println(Arrays.toString(naturales));
-		*/
-}
+	*/
+	}
 	
 	static void nombres() {
 		// Declaración del array (sin valores aún)
@@ -31,15 +43,17 @@ public class ArraysEjemplos {
 		System.out.println("Primer elemento:"+nombres[0]);
 		Arrays.sort(nombres); //Ahora Ana pasa a la primera posición
 		
-		System.out.println("Primer elemento:"+nombres[0]);	//
+		System.out.println("Primer elemento tras sort():"+nombres[0]);	//
 
 	}
 	
 	static void colores() {
 		// Array con valores definidos directamente
 		String[] colores = {"Rojo", "Verde", "Azul"};
+		
 		System.out.println("Referencia al array en memoria: "+colores);
 		System.out.println("Sin ordenar: "+Arrays.toString(colores));
+		
 		Arrays.sort(colores);
 		System.out.println("Ordenado: "+Arrays.toString(colores));
 		
@@ -50,11 +64,12 @@ public class ArraysEjemplos {
 		//Copiar un array en otro más grande
 		String[] colores2 =Arrays.copyOf(colores, 6);
 		colores2[3]="Naranja"; //Ahora puedo añadir un nuevo elemento
+		
 		System.out.println("\n¿Son iguales los arrays:? "+Arrays.equals(colores,colores2));
 		
 		System.out.println("\n -----");
 		
-	    //Otra forma de recorres los elementos del array
+		//Otra forma de recorres los elementos del array
 		for (String color:colores2) {
 			System.out.println("Color "+color);
 		}
@@ -106,8 +121,14 @@ public class ArraysEjemplos {
 		}
 	}
 	
-	static void modificaArray(int [] numeros) {
-		numeros[0]*=-1;
+	static void modificaArray(int [] numeros, int pos) throws LimitesException {
+		if (pos>numeros.length)
+			throw new LimitesException("Indice fuera de rango");
+		else
+			numeros[pos]*=-1;
+		//numeros[0]=numeros[0]*(-1);
 	}
 	
+	
+
 }
