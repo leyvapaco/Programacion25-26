@@ -12,13 +12,13 @@ public LimitesException(String mensaje) {
 public class ArraysEjemplos {
 		public static void main(String[] args) {
 		
-		nombres();
+		//nombres();
 		//colores();
 		//edades();
-		//notas();
+		// notas();
 		//caracteres();
 		
-		/*
+		
 		int [] naturales= {1,2,3,4};
 		try {
 			modificaArray(naturales,2);
@@ -27,17 +27,18 @@ public class ArraysEjemplos {
 		} 
 		//Comprobamos que el método ha modificado nuestro array naturales
 		System.out.println(Arrays.toString(naturales));
-	*/
+	
 	}
 	
 	static void nombres() {
 		// Declaración del array (sin valores aún)
-		String[] nombres= new String[3];
+		String[] nombres= new String[4];
 
 		// Asignación de valores
 		nombres[0] = "Berta";
 		nombres[1] = "Ana";
 		nombres[2] = "Carlos";
+		nombres[3] = "Paco";
 
 
 		System.out.println("Primer elemento:"+nombres[0]);
@@ -89,8 +90,8 @@ public class ArraysEjemplos {
 	
 	static void notas() {
 		//Array de Doubles (wrapper)
-		Double[] notas= {3.7,6.2,9.25};
-		Double[] aprobados= new Double[notas.length];
+		double[] notas= {3.7,6.2,9.25};
+		double[] aprobados= new double[notas.length];
 		
 		System.out.println("\n -----");
 		
@@ -105,7 +106,7 @@ public class ArraysEjemplos {
 		}
 		System.out.println(Arrays.toString(aprobados));
 		
-		for (Double elemento:aprobados) {
+		for (double elemento:aprobados) {
 			System.out.println("Aprobado: "+elemento);
 		}
 
