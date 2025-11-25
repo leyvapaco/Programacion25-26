@@ -14,12 +14,10 @@ public class OrdenacionInsercion {
                 arr[j + 1] = arr[j];
                 j = j - 1;
             }
-
             // Insertar 'key' en la posición correcta
             arr[j + 1] = key;
         }
     }
-
     // Método auxiliar para imprimir el array
     public static void printArray(int[] arr) {
         for (int num : arr) {
