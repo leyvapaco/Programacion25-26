@@ -12,13 +12,13 @@ static boolean validaOperacion(Character op) throws OpNoValidaException{
 		}
 	return true; //Ejercicio: Modificar para que compruebe que la operación no es dígito ni letra
 }
-
+/*
 static boolean validaOperando(Character op) throws OperandoNoValidoException{
  //Ejercicio: Modificar para que compruebe que la operación no es dígito ni letra
 	return(true);
 
 }
-	
+	*/
 				
  static double suma(double a, double b) {
 	 return a+b;
