@@ -20,8 +20,7 @@ public class Ej6 {
                         repetido = true;	
                    }
                   j++;
-            }
-            
+            }        
             // Si no está repetido, lo añadimos
             if (!repetido) {
                 aux[contador] = elemento;

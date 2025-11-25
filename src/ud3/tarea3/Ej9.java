@@ -3,7 +3,7 @@ package ud3.tarea3;
 public class Ej9 {
 
     // Función que devuelve el número de aciertos
-    public static int contarAciertos(int[] apuesta, int[] ganadora) {
+    static int contarAciertos(int[] apuesta, int[] ganadora) {
         int aciertos = 0;
 
         // Recorremos la apuesta
