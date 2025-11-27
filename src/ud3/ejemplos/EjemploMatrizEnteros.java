@@ -4,9 +4,9 @@ public class EjemploMatrizEnteros {
     public static void main(String[] args) {
         // Declaración y asignación directa
         int[][] matriz = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12}
         };
 
         // Recorrido con bucles anidados

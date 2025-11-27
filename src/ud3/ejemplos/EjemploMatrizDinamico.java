@@ -2,8 +2,8 @@ package ud3.ejemplos;
 
 public class EjemploMatrizDinamico {
     public static void main(String[] args) {
-        int filas = 2;
-        int columnas = 4;
+        int filas = 3;
+        int columnas = 3;
 
         int[][] tabla = new int[filas][columnas];
 
@@ -15,12 +15,15 @@ public class EjemploMatrizDinamico {
             }
         }
 
-        // Mostrar tabla
-        for (int[] fila : tabla) {
-            for (int valor : fila) {
-                System.out.print(valor + " ");
-            }
+              
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+            	 System.out.print(tabla[i][j]);
+                }
             System.out.println();
-        }
+            }
+            
+            
+        
     }
 }

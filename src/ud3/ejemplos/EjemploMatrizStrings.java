@@ -9,7 +9,7 @@ public class EjemploMatrizStrings {
         };
 
         for (int i = 0; i < premios.length; i++) {
-            System.out.println("Número: " + premios[i][0] + 
+            System.out.println("Núm: " + premios[i][0] + 
                                " | Premio: " + premios[i][1]);
         }
     }
