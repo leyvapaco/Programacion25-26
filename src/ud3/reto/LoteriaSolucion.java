@@ -1,14 +1,12 @@
 package ud3.reto;
-
-
 import java.util.Scanner;
 
-
 //Excepción propia
-class GordoException extends Exception {
-public GordoException(String mensaje) {
-super(mensaje); 
-}}
+class ElGordoException extends Exception {
+public ElGordoException(String mensaje) {
+   super(mensaje); 
+	}
+}
 
 public class LoteriaSolucion {	
 	
@@ -95,7 +93,7 @@ public class LoteriaSolucion {
 	
 	
 	//Implementa un bucle para comprobar, haciendo uso del método heSidoAgraciado, si nuestro décimo tiene o no premio
-	public static void compruebaDecimos(String[] numerosSorteo, String[] premiosSorteo) throws GordoException{
+	public static void compruebaDecimos(String[] numerosSorteo, String[] premiosSorteo) throws ElGordoException{
 		Scanner sc=new Scanner(System.in);	
 		String miDecimo;
 		String miPremio="";
@@ -125,7 +123,7 @@ public class LoteriaSolucion {
 				miPremio=heSidoAgraciado(numerosSorteo,premiosSorteo, miDecimo);
 				System.out.println(miPremio);		
 			    if (miPremio.contains("PRIMER"))
-			    	throw new GordoException("¡¡A celebrar, te ha tocado el Gordo!!");
+			    	throw new ElGordoException("A celebrar el gordo!!");
 		
 		}while (!terminarDeComprobar);
 		
@@ -177,7 +175,7 @@ public class LoteriaSolucion {
 			compruebaDecimos(listaNumerosSorteo, listaPremiosSorteo);
 				
 			
-		} catch (GordoException e) {
+		} catch (ElGordoException e) {
 	         System.out.println(e.getMessage());
 	    } 
 		
