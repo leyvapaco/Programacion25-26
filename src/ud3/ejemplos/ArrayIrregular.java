@@ -1,4 +1,4 @@
-package ud2.ejemplos;
+package ud3.ejemplos;
 
 public class ArrayIrregular {
     public static void main(String[] args) {
