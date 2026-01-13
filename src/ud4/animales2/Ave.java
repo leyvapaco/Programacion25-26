@@ -1,22 +1,22 @@
 package ud4.animales2;
 
-public abstract class Ave extends Oviparo {
+public abstract class Ave extends Oviparo { //Si no hay instancias de Ave, es abstracta
 	private int patas;
 	private boolean alas;
 	
-	   Ave(){
-		   super();
-	   }
+	Ave(){
+		super(); //Llama al constructror de la clase padre, Oviparo
+	}
 	
-	   @Override
-	   public void comunicate() {
-		   System.out.println("Pio pio!");
-	   }
+	@Override
+	public void comunicate() {
+		System.out.println("Pio pio!");
+	}
 	   
 	 
-	   public void hacerNido() {
-		   System.out.println("Haciendo nido");
-	   }
+	public void hacerNido() {
+		  System.out.println("Haciendo nido");
+	}
 
 	public int getPatas() {
 		return patas;

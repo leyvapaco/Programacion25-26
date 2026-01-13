@@ -36,7 +36,7 @@ public class Principal {
 		
 		Serpiente.muestraEspecies();
 		System.out.println(serp1.getClass().getSimpleName());
-		serp1.setNombre("Cobry");
+		serp1.setNombre("Bichaca");
 		serp1.comunicate();
 		serp1.reproducete();
 		serp1.morder(Especies.COBRA,pato1); //Pobre pato...

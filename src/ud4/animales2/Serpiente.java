@@ -4,7 +4,7 @@ package ud4.animales2;
 public class Serpiente extends Reptil {
 	
 	public enum Especies{COBRA,PITON,VIBORA;}
-	
+
 	Serpiente(){
 		   super(); //Usamos constructor del padre
 	   }
