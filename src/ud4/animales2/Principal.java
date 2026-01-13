@@ -1,6 +1,7 @@
 package ud4.animales2;
 
 import ud4.animales2.Serpiente.Especies;
+import ud4.visibilidad.Gato;
 
 public class Principal {
 	
@@ -8,6 +9,8 @@ public class Principal {
 		Perro perro1 = new Perro();
 		Pato  pato1= new Pato(); 
 		Serpiente serp1= new Serpiente();
+		//Gato gato1= new Gato();
+		//gato1.comunicate();
 			
 		Animal.getVidas();
 		Mamifero.getVidas();
@@ -39,7 +42,8 @@ public class Principal {
 		serp1.setNombre("Bichaca");
 		serp1.comunicate();
 		serp1.reproducete();
-		serp1.morder(Especies.COBRA,pato1); //Pobre pato...
+		serp1.morder(Especies.VIBORA,pato1); //Pobre pato...
+		System.out.println("Me llamo: "+serp1.getNombre());
 
 		Animal.getVidas();
 	}
