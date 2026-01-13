@@ -3,7 +3,7 @@ package ud4.animales2;
 public class Pato extends Ave {
 
 	   Pato(){
-		   super(); //Usamos constructor del padre
+		   super(); //Usamos constructor del padre (Oviparo)
 	   }
 	
 	   @Override

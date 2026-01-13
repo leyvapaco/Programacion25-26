@@ -7,6 +7,7 @@ public class Ave extends Animal {
 	   Ave(){
 		   vidas++;
 	   }
+	   
 	
 	   @Override
 	   public void comunicarse() {
