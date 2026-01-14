@@ -11,7 +11,7 @@ public class Principal {
 		Serpiente serp1= new Serpiente();
 		Gato gato1= new Gato();
 		gato1.comunicate();
-		//gato1.respira=true; No tengo acceso directo al atributo
+		//gato1.respira=true; //No tengo acceso directo al atributo
 		//Accedo al método protected de Mamifero:
 		System.out.println("Gato respira?:"+gato1.isRespira());
 			
