@@ -23,7 +23,7 @@ public class Serpiente extends Reptil {
 	   	   
    public static void muestraEspecies() {
 	   for(Especies esp: Especies.values()){
-			System.out.print(esp.name()+" - ");
+			System.out.print(esp+" - ");
 		}
 	   System.out.println();
    }

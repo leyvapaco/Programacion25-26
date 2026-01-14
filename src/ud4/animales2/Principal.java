@@ -9,8 +9,11 @@ public class Principal {
 		Perro perro1 = new Perro();
 		Pato  pato1= new Pato(); 
 		Serpiente serp1= new Serpiente();
-		//Gato gato1= new Gato();
-		//gato1.comunicate();
+		Gato gato1= new Gato();
+		gato1.comunicate();
+		//gato1.respira=true; No tengo acceso directo al atributo
+		//Accedo al método protected de Mamifero:
+		System.out.println("Gato respira?:"+gato1.isRespira());
 			
 		Animal.getVidas();
 		Mamifero.getVidas();
