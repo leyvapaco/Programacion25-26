@@ -2,61 +2,137 @@ package ud4.tarea1;
 
 import java.util.Scanner;
 
+import ud4.tarea1.ferroviaria.JefeEstacion;
+import ud4.tarea1.ferroviaria.Locomotora;
+import ud4.tarea1.ferroviaria.Maquinista;
+import ud4.tarea1.ferroviaria.Mecanico;
+import ud4.tarea1.ferroviaria.Tren;
+import ud4.tarea1.ferroviaria.Vagon;
+
 public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
+		CuentaCorrienteEj3 cuenta1 = new CuentaCorrienteEj3("Yazmine Lamal", "43215933J");
+
 		
 		System.out.println("¿Que actividad desea comprobar? (1-10)");
 		int opciones = sc.nextInt();
 		
 		switch (opciones) {
-		case 1, 2:
+		case 1:
 			
-			//ACTIVIDAD 1 Y 2
-			CuentaCorriente Cuenta1 = new CuentaCorriente("Manolo Lama", "43215933J");
-			CuentaCorriente Cuenta2 = new CuentaCorriente(45);
-			CuentaCorriente Cuenta3 = new CuentaCorriente(25, -150, "13834353X");
+			//ACTIVIDAD 1 
+			cuenta1.mostrarInfo();
 			
 			//INGRESO DE DINERO
-			Cuenta1.IngresarDinero(230);
+			System.out.println("\n----Ingreso 50----");
+			cuenta1.ingresar(50);
+			System.out.println("Saldo:"+cuenta1.getSaldo());
+			
 			
 			//RETIRO DE DINERO
-			System.out.println("Estado de la transacción: "+Cuenta1.SacarDinero(222));
+			System.out.println("\n----Retirada 50 ----");
+			if (cuenta1.retirar(50))
+			{
+				System.out.println("Saldo:"+cuenta1.getSaldo());
+			} else
+				System.out.println("Operación denegada: Saldo insuficiente");
+			
+			//RETIRO DE DINERO
+			System.out.println("\n----Retirada 50 ----");
+			if (cuenta1.retirar(50))
+			{
+				System.out.println("Saldo:"+cuenta1.getSaldo());
+			} else
+				System.out.println("Operación denegada: Saldo insuficiente");
+			
+			//RETIRO DE DINERO
+			System.out.println("\n----Retirada 1 ----");
+			if (cuenta1.retirar(1))
+			{
+				System.out.println("Saldo:"+cuenta1.getSaldo());
+			} else
+				System.out.println("Operación denegada: Saldo insuficiente");
+			
 			
 			//INFORMACIÓN DE LA CUENTA
-			System.out.println("----Cuenta 1----");
-			Cuenta1.MostrarInfo();
-			System.out.println("----Cuenta 2----");
-			Cuenta2.MostrarInfo();
-			System.out.println("----Cuenta 3----");
-			Cuenta3.MostrarInfo();
+			System.out.println("\n---Cuenta 1----");
+			cuenta1.mostrarInfo();
+		
+			break;
 			
+		case 2:
+			
+			//ACTIVIDAD 2
+			CuentaCorrienteEj3 cuenta2 = new CuentaCorrienteEj3(45);
+			CuentaCorrienteEj3 cuenta3 = new CuentaCorrienteEj3(30, -10, "13834353X");
+
+			System.out.println("----Cuenta 2----");
+			cuenta2.mostrarInfo();
+			
+			//RETIRO DE DINERO
+			System.out.println("\n----Retirada 50 cuenta 2 ----");
+			if (cuenta2.retirar(50))
+			{
+				System.out.println("Saldo:"+cuenta2.getSaldo());
+			} else
+				System.out.println("Operación denegada: Saldo insuficiente");
+			
+			
+			System.out.println("\n----Cuenta 3----");
+			cuenta3.mostrarInfo();
+			
+			//RETIRO DE DINERO
+			System.out.println("\n----Retirada 50 cuenta 3 ----");
+			if (cuenta3.retirar(50))
+			{
+				System.out.println("Saldo:"+cuenta3.getSaldo());
+			} else
+				System.out.println("Operación denegada: Saldo insuficiente");
+			
+			break;
+			
+		case 3:
+			
+			//ACTIVIDAD 1 
+			//cuenta1.saldo=1000;
+			//cuenta1.limite=1000;
+			cuenta1.nombre="Juan";
+			cuenta1.DNI="24.231.231W";
+			cuenta1.mostrarInfo();
 			break;
 			
 		case 4:
 			
 			//ACTIVIDAD 4
-			CuentaCorriente Cuenta4 = new CuentaCorriente("Manolo Lama", "43215933J");
-			CuentaCorriente Cuenta5 = new CuentaCorriente("Juan Alberto", "93254233J");
-			CuentaCorriente Cuenta6 = new CuentaCorriente("Ronaldinho", "73245233W");
-			System.out.println("Nombre del Banco: "+Cuenta4.GetBanco());
+			CuentaCorrienteEj3 cuenta5 = new CuentaCorrienteEj3("Juan Alberto", "93254233J");
+			System.out.println("Nombre del Banco: "+cuenta5.getBanco());
 			
-			Cuenta4.SetBanco("Aerwrer");
-			System.out.println(Cuenta4.GetBanco());
-			System.out.println(Cuenta5.GetBanco());
-			System.out.println(Cuenta6.GetBanco());
+			cuenta5.setBanco("Banca Rota");
+			System.out.println("Nombre del Banco: "+cuenta5.getBanco());
 			break;
 		
 		case 5:
 			
 			//ACTIVIDAD 5
-			String CadenaEjemplo = "Esto es un ejemplo";
-			Texto Texto1 = new Texto(CadenaEjemplo, 30);
+			String cadenaEjemplo = "ola";
+			Texto texto1 = new Texto(cadenaEjemplo, 5);
+			System.out.println(texto1.toString());
 			
-			Texto1.addCadenaCaracteres('c');
-			Texto1.addCadenaCadena(" AYUDA ");
-			System.out.println(Texto1.contarVocales(CadenaEjemplo));
+			texto1.addCaracterComienzo('M');
+			System.out.println(texto1.toString());
+			
+			texto1.addCaracterFinal('n');
+			System.out.println(texto1.toString());
+			
+			texto1.addCadenaComienzo("Estos");
+			System.out.println(texto1.toString());
+			
+			texto1.addCadenaFinal("Mucho");
+			System.out.println(texto1.toString());
+			
+			System.out.println("Número de vocales: "+texto1.contarVocales(cadenaEjemplo));
 			
 			break;
 			
@@ -64,18 +140,16 @@ public class Main {
 		case 6:
 			
 			//ACTIVIDAD 6
-			String NombreBanco = "BancoNum1";
-			String Dirección = "Sevilla";
 			
-			Banco Banco1 = new Banco(NombreBanco, Dirección);
-			Banco Banco2 = new Banco("BancoNum2", "Malaga");
+			Banco Banco1 = new Banco("Banca Rota", "Sevilla");
+			Banco Banco2 = new Banco("Banco El Palo", "Malaga");
 			
 			//INFO DE LOS BANCOS
 			System.out.println("Nombre del banco: "+Banco1.getNombre());
 			System.out.println("Capital: "+Banco1.getCapital());
 			System.out.println("Dirección: "+Banco1.getDireccionCentral());
 			
-			System.out.println("Nombre del banco: "+Banco2.getNombre());
+			System.out.println("\nNombre del banco: "+Banco2.getNombre());
 			System.out.println("Capital: "+Banco2.getCapital());
 			System.out.println("Dirección: "+Banco2.getDireccionCentral());
 			
@@ -85,9 +159,16 @@ public class Main {
 			
 			//COMPROBACIÓN DEL CAMBIO DE ATRIBUTOS
 			System.out.println("\n");
-			System.out.println("---ATRIBUTOS CAMBIADOS---");
+			System.out.println("---ATRIBUTOS CAPITAL Y DIRECCIÓN CAMBIADOS:");
 			System.out.println("Capital: "+Banco1.getCapital());
 			System.out.println("Dirección: "+Banco1.getDireccionCentral());
+			
+			CuentaCorrienteEj6 cuenta6 = new CuentaCorrienteEj6("Yazmine Lamal", "43215933J");
+			cuenta6.mostrarInfo();//Cuenta no vinculada a banco
+			cuenta6.setBanco(Banco1);
+			cuenta6.mostrarInfo();
+			cuenta6.setBanco(Banco2);
+			cuenta6.mostrarInfo();		
 			
 			break;
 			
@@ -95,17 +176,17 @@ public class Main {
 		case 7: 
 			
 			//ACTIVIDAD 7
-			Sintonizador Sinte1 = new Sintonizador();
+			Sintonizador sinto = new Sintonizador();
 			
-			System.out.println(Sinte1.display());
-			Sinte1.down(); //LA FRECUENCIA DEBE CAMBIAR A 180
-			System.out.println(Sinte1.display());
-			Sinte1.up(); //LA FRECUENCIA DEBE VOLVER A 80
-			System.out.println(Sinte1.display());
-			Sinte1.up();
-			Sinte1.up();
-			Sinte1.up(); //DESPUES DE 3 SUBIDAS, LA FRECUENCIA DEBE SER DE 81.5
-			System.out.println(Sinte1.display());
+			System.out.println(sinto.display());
+			sinto.down(); //LA FRECUENCIA DEBE CAMBIAR A 180
+			System.out.println(sinto.display());
+			sinto.up(); //LA FRECUENCIA DEBE VOLVER A 80
+			System.out.println(sinto.display());
+			sinto.up();
+			sinto.up();
+			sinto.up(); //DESPUES DE 3 SUBIDAS, LA FRECUENCIA DEBE SER DE 81.5
+			System.out.println(sinto.display());
 			
 			break;
 			
@@ -123,7 +204,7 @@ public class Main {
 			bombilla3.getEstado();
 			bombilla2.getEstado();
 			//APAGADO DE LOS PLOMOS
-			Bombilla.apagaPlomos();
+			Bombilla.apagaGeneral();
 			
 			System.out.println("--PRUEBA CON LOS PLOMOS APAGADOS--");
 			bombilla1.getEstado();
@@ -131,7 +212,7 @@ public class Main {
 			bombilla3.getEstado();
 			bombilla2.getEstado();
 			//REPARACIÓN DE LOS PLOMOS
-			Bombilla.reparaPlomos();
+			Bombilla.enciendeGeneral();
 			
 			System.out.println("--PRUEBA CON LOS PLOMOS REPARADOS--");
 			bombilla1.getEstado();
@@ -140,37 +221,7 @@ public class Main {
 			bombilla2.getEstado();
 			break;
 			
-			
-		case 9:
-			
-			//ACTIVIDAD 9
-			Maquinista maquinista1 = new Maquinista("AA", "12568932U", 15478, "Rango 3");
-			Mecanico mecanico1 = new Mecanico("ABC", "45576832G", "Frenos");
-			JefeEstacion jefe1 = new JefeEstacion("CDF", "35678921X");
-			
-			Vagon vagon1 = new Vagon(4321, 288, "Carbón");
-			Locomotora locomotora1 = new Locomotora("2467 JBG", 7600,"2010", mecanico1);
-			Tren tren1 = new Tren(locomotora1, maquinista1);
-			
-			//INFO DEL PERSONAL
-			System.out.println();
-			System.out.println("--INFO MAQUINISTA--");
-			maquinista1.getInfoPersonal();
-			System.out.println("---INFO MECANICO---");
-			mecanico1.getInfoPersonal();
-			System.out.println("-----INFO JEFE-----");
-			jefe1.getInfoPersonal();
-			
-			
-			//INFO DE LAS MAQUINAS
-			System.out.println();
-			System.out.println("----INFO VAGÓN-----");
-			vagon1.getInfoMaquinaria();
-			System.out.println("--INFO LOCOMOTORA--");
-			locomotora1.getInfoMaquinaria();
-			
-			break;
-			
+					
 		case 10:
 			
 			//ACTIVIDAD 10
