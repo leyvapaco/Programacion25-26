@@ -7,7 +7,7 @@ public class Gato extends Mamifero {
    private boolean cola;
    
    public Gato(){
-	   super();
+	   super(); //Tiene visibilidad sobre el constructor de Mamifero
 	   this.patas=4;
 	   this.cola=true;
    }

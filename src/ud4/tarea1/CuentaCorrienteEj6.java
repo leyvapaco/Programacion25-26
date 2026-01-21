@@ -1,29 +1,25 @@
 package ud4.tarea1;
-public class CuentaCorriente {
+public class CuentaCorrienteEj6 {
 	private int saldo;
 	private int limite;
-	private String nombre;
-	private String DNI;
-	static String banco;
+	public String nombre;
+	String DNI;
+	private Banco banco;
 	
-	CuentaCorriente(String nombre, String DNI){
+	CuentaCorrienteEj6(String nombre, String DNI){
 		this.nombre = nombre;
 		this.DNI = DNI;
 		this.saldo = 0;
 		this.limite = -50;
 		
 	}
-	
-	public int getSaldo() {
-		return saldo;
-	}
 
-	CuentaCorriente(int saldo){
+	CuentaCorrienteEj6(int saldo){
 		this.saldo = saldo;
 		this.limite = 0;
 	}
 	
-	CuentaCorriente(int saldo, int descubierto, String DNI){
+	CuentaCorrienteEj6(int saldo, int descubierto, String DNI){
 		this.saldo = saldo;
 		this.limite = descubierto;
 		this.DNI = DNI;
@@ -48,19 +44,20 @@ public class CuentaCorriente {
 	}
 
 	
-	public String getBanco() {
-		return banco;
-	}
-	
-	public static void setBanco(String idBanco) {
-		banco = idBanco;
+	public void setBanco(Banco banco) {
+		this.banco = banco;
 	}
 
+	
+	public int getSaldo() {
+		return saldo;
+	}
 
 	
 	@Override
 	public String toString() {
-		return "CuentaCorriente [saldo=" + saldo + ", limite=" + limite + ", nombre=" + nombre + ", DNI=" + DNI + "]";
+		return "CuentaCorrienteEj6 [saldo=" + saldo + ", limite=" + limite + ", nombre=" + nombre + ", DNI=" + DNI
+				+ ", banco=" + banco + "]";
 	}
 
 	public void mostrarInfo() {
