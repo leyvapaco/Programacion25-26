@@ -117,7 +117,7 @@ public class Main {
 			
 			//ACTIVIDAD 5
 			String cadenaEjemplo = "ola";
-			Texto texto1 = new Texto(cadenaEjemplo, 5);
+			Texto texto1 = new Texto(cadenaEjemplo, 10);
 			System.out.println(texto1.toString());
 			
 			texto1.addCaracterComienzo('M');
@@ -225,15 +225,26 @@ public class Main {
 		case 10:
 			
 			//ACTIVIDAD 10
-			System.out.println("Escriba la hora que desea utilizar (Formato 1 - 12): ");
-			int hora = sc.nextInt();
-			System.out.println("\n"+"Escriba la cantidad de minutos que tiene su hora deseada (Formato 00 - 60): ");
-			int minutos = sc.nextInt();
-			System.out.println("\n"+"Escriba la cantidad de segundos que desea añadir: ");
-			int segundos = sc.nextInt();
+			int hora = 23;
+			int minutos = 58;
+			int segundos = 50;
 			
 			Hora hora1 = new Hora(hora, minutos, segundos);
-			hora1.sumaHora(hora, minutos, segundos);
+			//Son las 23:58:50 y sumo 9 segundos 
+			hora1.sumarSegundos(9);	
+			System.out.println("Hora resultante:"+hora1.toString());
+			
+			//Sumo 2 segundos 
+			hora1.sumarSegundos(2);	
+			System.out.println("Hora resultante:"+hora1.toString());
+			
+			//Sumo 60 segundos 
+			hora1.sumarSegundos(60);	
+			System.out.println("Hora resultante:"+hora1.toString());
+			
+			//Sumo 60 segundos 
+			hora1.sumarSegundos(60);	
+			System.out.println("Hora resultante:"+hora1.toString());
 			
 			break;
 		default:
