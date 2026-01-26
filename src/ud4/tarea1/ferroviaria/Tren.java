@@ -23,11 +23,14 @@ public class Tren extends Maquinaria{
 	public void addVagon(Vagon vagon) {
 		int i=0;
 			
-		while ((this.vagones[i]!=null)&&(i<MAX_VAGONES)) {
+		while ((i<MAX_VAGONES)&&(this.vagones[i]!=null)) {
 			i++;
 		}//Busco la posición del array en la que añadir el vagón
 		
-		this.vagones[i]=vagon;
+		if (i>=MAX_VAGONES)
+			System.out.println("No se puede");
+		else 
+			this.vagones[i]=vagon;
 	}
 	
 	public void quitaVagon(Vagon vagon) {
@@ -36,7 +39,7 @@ public class Tren extends Maquinaria{
 		
 		Vagon[] vagonesAux = new Vagon[MAX_VAGONES];
 		
-		while ((this.vagones[i]!=vagon)&&(i<MAX_VAGONES)) {
+		while ((i<MAX_VAGONES)&&(this.vagones[i]!=vagon)) {
 			vagonesAux[j]=this.vagones[i];
 			i++;
 			j++;
@@ -69,12 +72,12 @@ public class Tren extends Maquinaria{
 
 	@Override
 	public void getInfoMaquinaria() {
-		System.out.println("\nLocomotora: "+getLocomotora());
+		System.out.println("\nLocomotora: "+getLocomotora().toString());
 		
 		System.out.println("Vagones: ");
 		
 		int i=0;
-		while ((this.vagones[i]!=null)&&(i<MAX_VAGONES))
+		while ((i<MAX_VAGONES)&&(this.vagones[i]!=null))
 		{
 			System.out.println(vagones[i].toString());
 			i++;

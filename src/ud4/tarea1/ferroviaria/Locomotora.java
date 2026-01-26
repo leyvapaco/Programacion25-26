@@ -26,5 +26,12 @@ public class Locomotora extends Maquinaria {
 		System.out.println("Año de fabricación: "+this.anoFabricacion);
 		System.out.println("Mecánico: "+this.mecanico.nombre);
 	}
+
+
+	@Override
+	public String toString() {
+		return "Locomotora [matricula=" + matricula + "]";
+	}
+	
 	
 }
