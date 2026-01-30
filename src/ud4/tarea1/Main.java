@@ -226,30 +226,31 @@ public class Main {
 			
 			//ACTIVIDAD 10
 			int hora = 23;
-			int minutos = 58;
+			int minutos = 59;
 			int segundos = 50;
 			
 			Hora hora1 = new Hora(hora, minutos, segundos);
+			System.out.println("Hora inicial:"+hora1.toString());
+						
 			//Son las 23:58:50 y sumo 9 segundos 
 			hora1.sumarSegundos(9);	
 			System.out.println("Hora resultante:"+hora1.toString());
 			
-			//Sumo 2 segundos 
-			hora1.sumarSegundos(2);	
+			//Sumo 1 segundo
+			hora1.sumarSegundos(1);	
 			System.out.println("Hora resultante:"+hora1.toString());
-			
-			//Sumo 60 segundos 
-			hora1.sumarSegundos(60);	
+				
+			//Sumo 3 segundo
+			hora1.sumarSegundos(3);	
 			System.out.println("Hora resultante:"+hora1.toString());
-			
-			//Sumo 60 segundos 
-			hora1.sumarSegundos(60);	
-			System.out.println("Hora resultante:"+hora1.toString());
-			
+	
+
+		
 			break;
 		default:
 			break;
 		}
+		
 		
 		
 		
