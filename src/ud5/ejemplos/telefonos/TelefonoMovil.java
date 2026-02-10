@@ -15,4 +15,11 @@ public abstract class TelefonoMovil implements Telefono {
 
     // Todos los móviles modernos cargan, pero no igual
     public abstract void cargar();
+
+	@Override
+	public String toString() {
+		return "TelefonoMovil [marca=" + marca + ", modelo=" + modelo + "]";
+	}
+    
+    
 }
