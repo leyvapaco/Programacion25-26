@@ -11,8 +11,8 @@ public static void main(String[] args) {
 	Cliente[] clientes= new Cliente[MAX_CLI];
 	
 	Cliente cli1=new Cliente("23.346.431B","Berta",21,100.0);	
-	Cliente cli2=new Cliente("23.346.431A","Charo",19,200.0);
-	Cliente cli3=new Cliente("23.346.431C","Alonso",23,300.0);
+	Cliente cli2=new Cliente("23.346.431C","Charo",19,200.0);
+	Cliente cli3=new Cliente("23.346.431A","Alonso",23,300.0);
 	Cliente cli4=new Cliente("23.346.431D","Darío",14,400.0);
 	Cliente cli5=new Cliente("23.346.431E","Eva",25,500.0);
 
