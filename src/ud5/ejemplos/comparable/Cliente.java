@@ -2,6 +2,7 @@ package ud5.ejemplos.comparable;
 
 public class Cliente implements Comparable<Cliente> {
 	private String dni;
+	private char letraDNI;
 	private String nombre;
 	private int edad;
 	private double saldo;
@@ -13,6 +14,7 @@ public class Cliente implements Comparable<Cliente> {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.saldo = saldo;
+		this.letraDNI = dni.charAt(dni.length() - 1);
 	}
 	
 	@Override
@@ -43,7 +45,11 @@ public class Cliente implements Comparable<Cliente> {
 		return Integer.compare(this.edad, c.edad); 
 	}
 	
-	*/
+		
+	// Comparar char
+	public int compareTo(Cliente c) {
+		return Character.compare(this.letraDNI, c.letraDNI); 
+	}*/
 	
 	  // Comparar Strings
 	  @Override
