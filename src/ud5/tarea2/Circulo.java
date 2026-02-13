@@ -4,12 +4,12 @@ public class Circulo implements Figura {
 
     private double radio;
 
-    public Circulo() {
-        this.radio = 10;
-    }
-
     public Circulo(double radio) {
         this.radio = radio;
+    }
+
+    public Circulo() {
+        this(10);
     }
 
     @Override
@@ -19,6 +19,6 @@ public class Circulo implements Figura {
 
     @Override
     public String toString() {
-        return "Circulo [radio=" + radio + ", area=" + getArea() + "]";
+        return "Círculo → Radio: " + radio + ", Área: " + getArea();
     }
 }

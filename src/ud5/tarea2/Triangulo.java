@@ -4,14 +4,13 @@ public class Triangulo extends PoligonoRegular implements Comparable<Triangulo> 
 
     private double altura;
 
-    public Triangulo() {
-        super();
-        this.altura = 10;
-    }
-
-    public Triangulo(double lado, double altura, String color) {
+    public Triangulo(double lado, double altura, Colores color) {
         super(lado, color);
         this.altura = altura;
+    }
+
+    public Triangulo() {
+        this(10, 10, Colores.AZUL);
     }
 
     @Override
@@ -19,19 +18,14 @@ public class Triangulo extends PoligonoRegular implements Comparable<Triangulo> 
         return (lado * altura) / 2;
     }
 
-    //Implementamos la interfaz Comparable 
-    //para definir la ordenación por defecto
     @Override
-    public int compareTo(Triangulo t) {
-        return Double.compare(this.lado, t.lado);
+    public int compareTo(Triangulo otro) {
+        return Double.compare(this.lado, otro.lado);
     }
 
     @Override
     public String toString() {
-        return "Triangulo [lado=" + lado + ", altura=" + altura + ", color=" + color + ", area=" + getArea() + "]";
-    }
-
-    public String getColor() {
-        return color;
+        return "Triángulo → Lado: " + lado + ", Altura: " + altura +
+               ", Color: " + color + ", Área: " + getArea();
     }
 }
