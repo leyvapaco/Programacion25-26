@@ -15,6 +15,7 @@ public abstract class PoligonoRegular implements Figura {
         this(10, Colores.AZUL);
     }
 
+       
     @Override
     public String toString() {
         return "Lado: " + lado + ", Color: " + color;
