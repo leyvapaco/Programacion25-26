@@ -12,6 +12,9 @@ public class Main {
         android.cargar();
         ((ConGPS) android).activarGPS();
         ((ConBluetooth) android).activarBluetooth();
+        ((PagoNFC) android).activarNFC();
+        ((PagoNFC) android).pagar(20);
+      
 
         System.out.println();
 

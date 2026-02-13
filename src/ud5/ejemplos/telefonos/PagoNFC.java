@@ -8,7 +8,7 @@ public interface PagoNFC {
     /**
      * Activa el chip NFC del dispositivo.
      */
-    void activarNFC();
+    public void activarNFC();
 
     /**
      * Realiza un pago acercando el dispositivo a un terminal compatible.
@@ -16,10 +16,10 @@ public interface PagoNFC {
      * @param cantidad monto a pagar.
      * @return true si el pago fue exitoso, false si falló.
      */
-    boolean pagar(double cantidad);
+    public boolean pagar(double cantidad);
 
     /**
      * Desactiva el chip NFC después del uso.
      */
-    void desactivarNFC();
+    public void desactivarNFC();
 }
