@@ -6,7 +6,7 @@ import java.util.Set;
 public class Actividad9B {
 
 	public static void main (String[]args) {
-		
+		//Probamos ahora con Integer en lugar de String
 		Set<Integer> conjunto1 = new HashSet<>();
 		
 		conjunto1.add(3);
