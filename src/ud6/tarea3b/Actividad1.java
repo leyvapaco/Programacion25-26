@@ -18,15 +18,31 @@ public class Actividad1 {
         mapa.put(calcularClave("11223344C"), "José Manuel");
 
         // Mostrar todos los elementos del HashMap
+        for (Integer clave : mapa.keySet()) {
+            System.out.println("Clave: " + clave + " - Valor: " + mapa.get(clave));
+        }        
+        System.out.println("------Otra forma de iterar el mapa");
+        
+        // Otra forma de iterar el mapa
         for (Map.Entry<Integer, String> entrada : mapa.entrySet()) {
             System.out.println("Clave: " + entrada.getKey() + " - Valor: " + entrada.getValue());
         }
+        System.out.println("------Otra forma de iterar el mapa");
         
-        //Otra forma de iterar 
-        Iterator<Map.Entry<Integer, String>> it = mapa.entrySet().iterator();
+        // Otra forma de iterar el mapa
+        Iterator<Integer> it = mapa.keySet().iterator();
 
         while (it.hasNext()) {
-            Map.Entry<Integer, String> entrada = it.next();
+            Integer entrada = it.next();
+            System.out.println("Clave: " + entrada + " - Valor: " + mapa.get((entrada)));
+        }        
+        System.out.println("------Otra forma de iterar el mapa");
+        
+        // Otra forma de iterar el mapa
+        Iterator<Map.Entry<Integer, String>> it2 = mapa.entrySet().iterator();
+
+        while (it2.hasNext()) {
+            Map.Entry<Integer, String> entrada = it2.next();
             System.out.println("Clave: " + entrada.getKey() + " - Valor: " + entrada.getValue());
         }
     }
