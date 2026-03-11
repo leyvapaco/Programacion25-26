@@ -51,7 +51,7 @@ public class Fiesta {
 		
 		//Convertir una lista en un set. LinkedHashSet respeta el orden de inserción
 	    System.out.println("\n¿En qué orden se han apuntado mis invitados?");
-		Set <Invitado> miLinkedHashSetInvitados =new LinkedHashSet<Invitado>(miListaInvitados);
+		Set <Invitado> miLinkedHashSetInvitados =new LinkedHashSet<>(miListaInvitados);
 		System.out.println(miLinkedHashSetInvitados);
 		
 		//Dice Ana que si Héctor no va, ella tampoco. Y además, que debe ser el primero de la lista.
@@ -122,7 +122,7 @@ public class Fiesta {
 		//¿Puedo añadir de nuevo a Héctor al SET?
 		System.out.println("¿Puedo añadir de nuevo a Héctor al SET?:"+miTreeSetInvitados.add(p4));
 						
-	    System.out.println("\n¿Está invitado Mario?:"+miTreeSetInvitados.contains(p4));   
+	    System.out.println("\n¿Está invitado Mario?:"+miTreeSetInvitados.contains(p1));   
 	    
 	    System.out.println("\nRocío dice que al final no viene que tiene mucho que estudiar, así queda la fiesta:");
 	    miTreeSetInvitados.remove(p3); 
