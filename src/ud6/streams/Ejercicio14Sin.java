@@ -1,0 +1,88 @@
+package ud6.streams;
+
+import java.util.*;
+import java.util.stream.*;
+
+/*
+Ejercicio: Usar Streams encadenados para:
+1) Filtrar mayores de 18.
+2) Agrupar por ciudad y calcular salario medio.
+3) Filtrar ciudades con media > 2500.
+4) Ordenar por salario medio desc.
+5) Devolver Map<String, Double> manteniendo el orden.
+*/
+
+
+public class Ejercicio14Sin {
+
+    static class Persona {
+        private String nombre;
+        private int edad;
+        private String ciudad;
+        private double salario;
+
+        public Persona(String nombre, int edad, String ciudad, double salario) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.ciudad = ciudad;
+            this.salario = salario;
+        }
+
+        public String getNombre() { return nombre; }
+        public int getEdad() { return edad; }
+        public String getCiudad() { return ciudad; }
+        public double getSalario() { return salario; }
+
+        @Override
+        public String toString() {
+            return nombre + " (" + edad + ", " + ciudad + ", " + salario + ")";
+        }
+    }
+
+    public static void main(String[] args) {
+
+        List<Persona> personas = List.of(
+                new Persona("Pepe", 30, "Madrid", 2500),
+                new Persona("Luis", 17, "Sevilla", 0),
+                new Persona("Marta", 40, "Madrid", 3200),
+                new Persona("Pedro", 25, "Valencia", 3800),
+                new Persona("Lucía", 30, "Sevilla", 2100),
+                new Persona("Juan", 50, "Madrid", 4000),
+                new Persona("Lucas", 25, "Valencia", 4000)
+        );
+
+        //  Ejercicio avanzado con Streams encadenados
+        Map<String, Double> resultado =
+                personas.stream()
+                // 1. Filtrar mayores de edad
+                   .filter(p -> p.getEdad() > 18)
+
+                        // 2. Agrupar por ciudad y calcular salario medio
+                   .collect(Collectors.groupingBy(
+                          Persona::getCiudad,
+                          Collectors.averagingDouble(Persona::getSalario)
+                   ))
+                        
+                // 3. Convertir a stream para seguir operando
+                   .entrySet().stream()
+                   
+                // 4. Filtrar ciudades con salario medio > 2500
+                   .filter(e -> e.getValue() > 2500)
+
+                // 5. Ordenar por salario medio descendente
+                   .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
+ 
+                // 6. Volver a Map manteniendo el orden
+                   .collect(Collectors.toMap(
+                         Map.Entry::getKey,
+                         Map.Entry::getValue,
+                         (a, b) -> a,
+                           LinkedHashMap::new
+                   ));
+
+        System.out.println("Resultado final:");
+        resultado.forEach((ciudad, media) ->
+                System.out.println(ciudad + " → " + media)
+        );
+    }
+}
