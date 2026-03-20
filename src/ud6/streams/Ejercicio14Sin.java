@@ -57,7 +57,7 @@ public class Ejercicio14Sin {
                 // 1. Filtrar mayores de edad
                    .filter(p -> p.getEdad() > 18)
 
-                        // 2. Agrupar por ciudad y calcular salario medio
+                // 2. Agrupar por ciudad y calcular salario medio
                    .collect(Collectors.groupingBy(
                           Persona::getCiudad,
                           Collectors.averagingDouble(Persona::getSalario)
