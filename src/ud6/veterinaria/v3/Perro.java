@@ -12,12 +12,15 @@ public class Perro extends Domestico {
     
    
 	//Implementamos el método abstracto de la clase padre
+    //Es un ejemplo de Polimorfismo, un mismo método produce 
+    //comportamientos distintos según el objeto real
     public void cortaUnias() {
         int nuevoPeso = this.peso - pesoUniasPerro;
         this.peso = (nuevoPeso >= 0) ? nuevoPeso : 0;
     }
 
     //Implementamos este método propio de la clase Perro
+    // (es también un ejemplo de polimorfismo)
     public void damePatita() {
         System.out.println("El perro " + nombre + " te da la patita");
     }
