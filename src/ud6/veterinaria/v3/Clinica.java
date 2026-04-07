@@ -5,12 +5,12 @@ import java.util.*;
 
 public class Clinica {
     private Map<Integer, List<Consulta>> consultas = new HashMap<>();
-    private List<Animal> animales = new ArrayList<>();
-    
-    //Además del mapa que solicita el enunciado, puedo crearme las estructuras de datos que considere conveniente,
-    //si ello me falicita resolver algún método.
+    //Como ejemplo del mapa, tendríamos como clave el ID de tu perro, y como valor, todas sus consultas al veterinario
 
-    //Por ejemplo, tendríamos como clave a tu perro, y como valor, todas las veces que has ido a una consulta al veterinario
+    private List<Animal> animales = new ArrayList<>();
+    //Además del mapa que solicita el enunciado, puedo crearme las estructuras de datos que considere oportuno,
+    //si ello me falicita resolver algún método. En este caso, una lista de animales atendidos.
+
     public void addAnimal(Animal a) {
         animales.add(a);
         consultas.put(a.getId(), new ArrayList<Consulta>());
@@ -30,8 +30,8 @@ public class Clinica {
 
     // perros creados ordenados por raza (ascendente o descendente según el parámetro).
     public List<Perro> perrosByRaza(boolean ascendente) {
-        List<Perro> listaResultado = new ArrayList<>();
-        Iterator<Animal> it = animales.iterator();
+        List<Perro> listaResultado = new ArrayList<>(); //lista en la que volcar los animales que sean perro
+        Iterator<Animal> it = animales.iterator(); //Itero sobre la lista completa de animales que han ido a la clínica
 
         while (it.hasNext()) {
             Animal a = it.next();
@@ -43,7 +43,8 @@ public class Clinica {
         if (ascendente) {
         	//Los Strings ya implementan el compareTo(), por esta razón en este ejemplo podemos comparar la raza sin necesidad
         	//de implementar el interfaz Comparable -método compareTo()- en la clase Perro. Pero también valdría implementar Comparable en Perro, y de esta forma
-        	//Ahora bien, si usasemos un TreeSet en lugar de una lista, entonces sí necesitaríamos que Perro implementase el interfaz Comparable.
+        	//Ahora bien, si usasemos un TreeSet en lugar de una lista, entonces sí necesitaríamos que Perro implementase el interfaz Comparable
+        	// (o bien proporcionar un Comparator al crear el TreeSet).
         	
             Collections.sort(listaResultado, (p1, p2) -> p1.getRaza().compareTo(p2.getRaza()));
         } else {
@@ -52,6 +53,49 @@ public class Clinica {
 
         return listaResultado;
     }
+    
+    /* Alternativa a perrosByRaza usando un TreeSet en lugar de un ArrayList, y suponiendo que Perro implementa Comparable
+    public Set<Perro> perrosByRaza(boolean ascendente) {
+
+        Set<Perro> resultado;
+
+        if (ascendente) {
+            // Usa el compareTo() de Perro
+            resultado = new TreeSet<>();
+        } else {
+            // Orden inverso del compareTo()
+            resultado = new TreeSet<>(Comparator.reverseOrder());
+        }
+
+        for (Animal a : animales) {
+            if (a instanceof Perro) {
+                resultado.add((Perro) a);
+            }
+        }
+
+        return resultado;
+    }*/
+
+    
+    /* Alternativa a perrosByRaza usando un TreeSet que define un comparador sobre la marcha
+     
+    public Set<Perro> perrosByRaza(boolean ascendente) {
+
+        Comparator<Perro> comp = ascendente
+                ? (p1, p2) -> p1.getRaza().compareTo(p2.getRaza())
+                : (p1, p2) -> p2.getRaza().compareTo(p1.getRaza());
+
+        Set<Perro> resultado = new TreeSet<>(comp);
+
+        for (Animal a : animales) {
+            if (a instanceof Perro) {
+                resultado.add((Perro) a);
+            }
+        }
+
+        return resultado;
+    }*/
+       
 
     //Consultas realizadas a un determinado Animal, por orden de inserción. 
     public Set<Consulta> getConsultas(int idAnimal) throws AnimalNoEncontradoException {
@@ -62,18 +106,19 @@ public class Clinica {
         return resultado;
     }
 
+    
     //medicamentos recetados en una determinada consulta (pueden repetirse), ordenados por gramos 
    
     public List<Medicamento> getMedicamentosByPeso(Consulta c) {
-        List<Medicamento> lista = new ArrayList<>();
+        List<Medicamento> listaResultado = new ArrayList<>();
         Iterator<Medicamento> it = c.getMedicamentos().iterator();
 
         while (it.hasNext()) {
-            lista.add(it.next());
+            listaResultado.add(it.next());
         }
 
         // Orden descendente por gramos. Colletions.sort requiere que se le indique un objeto comparador.
-        Collections.sort(lista, new Comparator<Medicamento>() {       
+        Collections.sort(listaResultado, new Comparator<Medicamento>() {       
             //Podríamos crear una clase aparte que implemente la interfaz Comparator o bien hacerlo así directamente, implementando el método compare()
         	@Override
         	public int compare(Medicamento m1, Medicamento m2) {
@@ -81,10 +126,11 @@ public class Clinica {
             }
         });
 
-        return lista;
+        return listaResultado;
     } 
     
-        /* Alternativa al método anterior, recorriendo elementos por posición, al ser una lista
+    /* Alternativa al método anterior, recorriendo elementos por posición, al ser una lista
+    
     public List<Medicamento> getMedicamentosByPeso(Consulta c) {
         List<Medicamento> lista = new ArrayList<>(c.getMedicamentos());
 
@@ -100,7 +146,37 @@ public class Clinica {
         return lista;
     }*/
     
-    //Relación única de medicamentos suministrados a un determinado animal en un intervalo de fechas
+    /* Alternativa suponiendo que Medicamento implemente Comparable
+    
+    public List<Medicamento> getMedicamentosByPeso(Consulta c) {
+
+        List<Medicamento> listaResultado = new ArrayList<>();
+
+        for (Medicamento m : c.getMedicamentos()) {
+            listaResultado.add(m);   // Se permiten duplicados
+        }
+
+        // Orden natural definido en Medicamento.compareTo()
+        Collections.sort(listaResultado);
+
+        return listaResultado;
+    } */
+    
+    /* Alternativa suponiendo que Medicamento implemente Comparable y además los medicamentos no se pueden repetir (se puede usar Set)
+    public List<Medicamento> getMedicamentosByPeso(Consulta c) {
+
+        Set<Medicamento> setResultado = new TreeSet<>(Comparator.reverseOrder());
+
+        for (Medicamento m : c.getMedicamentos()) {
+            setResultado.add(m);
+        }
+
+        return new ArrayList<>(setResultado);
+    }*/
+
+    
+    
+    //Relación UNICA (Set...) de medicamentos suministrados a un determinado animal en un intervalo de fechas
     //ordenados por orden de inserción.
    
     public Set<Medicamento> getMedicamentosByAnimal(int idAnimal,LocalDate fechaInicio, LocalDate fechaFin)
@@ -110,19 +186,19 @@ public class Clinica {
     				throw new AnimalNoEncontradoException("Animal no encontrado");
     		}
 
-    		Set<Medicamento> resultado = new LinkedHashSet<>();
+    		Set<Medicamento> setResultado = new LinkedHashSet<>();
     		List<Consulta> listaConsultas = consultas.get(idAnimal);
 
     		for (Consulta c : listaConsultas) {
     			LocalDate f = c.getFecha();
     			if (!f.isBefore(fechaInicio) && !f.isAfter(fechaFin)) {
     				for (Medicamento m : c.getMedicamentos()) {
-    					resultado.add(m); // LinkedHashSet evita duplicados automáticamente
+    					setResultado.add(m); // LinkedHashSet evita duplicados automáticamente
     				}
     			}
     		}
 
-    		return resultado;
+    		return setResultado;
     }
 
     //Devolverá un mapa donde la clave será un Propietario y el valor la lista de Animales que posee. 
