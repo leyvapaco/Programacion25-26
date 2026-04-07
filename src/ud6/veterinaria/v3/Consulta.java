@@ -28,7 +28,7 @@ public class Consulta {
     public int getIdAnimal() {
         return idAnimal;
     }
-
+     
     public List<Medicamento> getMedicamentos() {
         return medicamentosRecetados;
     }
