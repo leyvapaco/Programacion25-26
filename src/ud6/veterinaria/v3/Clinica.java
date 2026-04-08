@@ -102,8 +102,8 @@ public class Clinica {
         if (!consultas.containsKey(idAnimal)) {
             throw new AnimalNoEncontradoException("Animal no encontrado");
         }
-        Set<Consulta> resultado = new LinkedHashSet<>(consultas.get(idAnimal)); //Recupera todas las consultas de un animal y las ordena por inserción al ser Linked
-        return resultado;
+        Set<Consulta> setResultado = new LinkedHashSet<>(consultas.get(idAnimal)); //Recupera todas las consultas de un animal y las ordena por inserción al ser Linked
+        return setResultado;
     }
 
     
