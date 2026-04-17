@@ -2,7 +2,8 @@ package ud6.streams;
 
 import java.util.Map;
 
-//Dado un Map<String, Integer> con productos y ventas, muestra los 3 productos más vendidos.
+//Dado un Map<String, Integer> con productos y ventas, 
+//muestra los 3 productos más vendidos.
 
 public class Ejercicio11 {
     public static void main(String[] args) {

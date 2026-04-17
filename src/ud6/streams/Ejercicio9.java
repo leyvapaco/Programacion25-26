@@ -23,5 +23,15 @@ public class Ejercicio9 {
                 ));
 
         System.out.println("Productos > 10€: " + filtrado);
+        
+        // Equivalente:
+        Map<String, Integer> filtrado2 = productos.entrySet().stream()
+                .filter(e -> e.getValue() > 10)
+                .collect(Collectors.toMap(
+                        e -> e.getKey(),
+                        e -> e.getValue()
+                ));
+        
+        System.out.println("Productos > 10€: " + filtrado2);
     }
 }
