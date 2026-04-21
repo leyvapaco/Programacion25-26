@@ -3,6 +3,8 @@ package ud7.tarea2;
 import java.io.Serializable;
 
 public class Tren implements Serializable {
+	private static final long serialVersionUID = 1234L;
+	
     private String nombre;
     private int numPasajeros;
 
