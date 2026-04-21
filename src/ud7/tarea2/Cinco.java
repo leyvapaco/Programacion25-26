@@ -1,30 +1,26 @@
 package ud7.tarea2;
-
-import java.io.*;
-import java.util.Arrays;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class Cinco {
 
     public static void main(String[] args) {
-        String ruta = "C:\\Users\\leyva\\ficheros\\";
+        String fichero = "C:\\Users\\leyva\\ficheros\\tabla.dat";
 
-        try (DataInputStream dis = new DataInputStream(new FileInputStream(ruta + "tabla.dat"))) {
-            // Leemos el número de elementos en la tabla
-            int n = dis.available() / 8; // Cada número double ocupa 8 bytes
+        try (DataInputStream dis = new DataInputStream(new FileInputStream(fichero))) {
 
-            // Creamos un array para almacenar los números
-            double[] numeros = new double[n];
+            System.out.println("Contenido del fichero:");
 
-            // Leemos los números del archivo
-            for (int i = 0; i < n; i++) {
-                numeros[i] = dis.readDouble();
+            // Cada double ocupa 8 bytes
+            // dis.available() devuelve cuántos bytes quedan por leer sin bloquear en el DataInputStream
+            while (dis.available() >= 8) {
+                double valor = dis.readDouble();
+                System.out.println(valor);
             }
 
-            // Mostramos los números por consola
-            System.out.println("Contenido de la tabla:");
-            System.out.println(Arrays.toString(numeros));
         } catch (IOException e) {
-            System.err.println("Error al leer desde el archivo binario: " + e.getMessage());
+            System.err.println("Error al leer el fichero: " + e.getMessage());
         }
     }
 }
