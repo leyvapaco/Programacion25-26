@@ -18,11 +18,11 @@ public class Cuatro {
 			double[] numeros = new double[n];
 
 			for (int i = 0; i < n; i++) {
-			    System.out.print("Introduce el número double " + (i + 1) + ": ");
+			    System.out.print("Introduce el número double (p.e 3,2) " + (i + 1) + ": ");
 			    numeros[i] = scanner.nextDouble();
 			}
 
-			try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(ruta + "tabla.bin"))) {
+			try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(ruta + "tabla.dat"))) {
 			    for (double numero : numeros) {
 			        dos.writeDouble(numero);
 			    }
