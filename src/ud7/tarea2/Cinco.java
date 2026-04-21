@@ -8,7 +8,7 @@ public class Cinco {
     public static void main(String[] args) {
         String ruta = "C:\\Users\\leyva\\ficheros\\";
 
-        try (DataInputStream dis = new DataInputStream(new FileInputStream(ruta + "tabla.bin"))) {
+        try (DataInputStream dis = new DataInputStream(new FileInputStream(ruta + "tabla.dat"))) {
             // Leemos el número de elementos en la tabla
             int n = dis.available() / 8; // Cada número double ocupa 8 bytes
 
