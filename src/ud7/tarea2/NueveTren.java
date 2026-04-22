@@ -2,7 +2,7 @@ package ud7.tarea2;
 
 import java.io.*;
 
-public class Nueve{
+public class NueveTren{
 	
 public static void main(String[] args) {
     String ruta = "C:\\Users\\leyva\\ficheros\\";
@@ -18,6 +18,7 @@ public static void main(String[] args) {
         oos.writeObject(tren1);
         oos.writeObject(tren2);
         oos.writeObject(tren3);
+        oos.close();;
         System.out.println("Objetos Tren guardados correctamente en el archivo: " + archivo);
     } catch (IOException e) {
         System.err.println("Error al escribir en el archivo binario: " + e.getMessage());
@@ -26,16 +27,19 @@ public static void main(String[] args) {
     // Leemos los objetos del archivo binario y los mostramos por pantalla
     try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
         System.out.println("Objetos Tren recuperados del archivo:");
-        try {
-            while (true) {
+        boolean fin=false;
+        try {        	
+            while (!fin) {
                 Tren trenRecuperado = (Tren) ois.readObject();
                 System.out.println(trenRecuperado);
             }
-        } catch (EOFException e) {
-            // Se alcanzó el final del archivo
+        } catch (EOFException e) { // EOF: fin de fichero
+        	fin=true; 
         }
+        ois.close();
     } catch (IOException | ClassNotFoundException e) {
         System.err.println("Error al leer desde el archivo binario: " + e.getMessage());
     }
+    
 }
 }
