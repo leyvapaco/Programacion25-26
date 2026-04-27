@@ -3,7 +3,7 @@ package ud7.tarea2;
 import java.io.Serializable;
 
 public class Numero implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1265L;
 
     private double valor;
 
