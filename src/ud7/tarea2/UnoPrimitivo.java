@@ -16,10 +16,11 @@ public class UnoPrimitivo {
             // Escribir el número double en el archivo binario
             dos.writeDouble(numero);
             System.out.println("El número se ha guardado correctamente");
+            dos.close();
         } catch (IOException e) {
             System.err.println("Error al escribir en el archivo binario: " + e.getMessage());
         }
 
-        scanner.close();
+        
     }
 }
