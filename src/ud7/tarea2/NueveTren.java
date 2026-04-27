@@ -18,7 +18,7 @@ public static void main(String[] args) {
         oos.writeObject(tren1);
         oos.writeObject(tren2);
         oos.writeObject(tren3);
-        oos.close();;
+
         System.out.println("Objetos Tren guardados correctamente en el archivo: " + archivo);
     } catch (IOException e) {
         System.err.println("Error al escribir en el archivo binario: " + e.getMessage());
@@ -36,7 +36,7 @@ public static void main(String[] args) {
         } catch (EOFException e) { // EOF: fin de fichero
         	fin=true; 
         }
-        ois.close();
+       
     } catch (IOException | ClassNotFoundException e) {
         System.err.println("Error al leer desde el archivo binario: " + e.getMessage());
     }
