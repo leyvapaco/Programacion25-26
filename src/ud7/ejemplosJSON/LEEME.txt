@@ -1,0 +1,9 @@
+Para poder usar JSON:
+
+1. Descarga el jar "gson-2.12.1.jar" de la siguiente URL:
+https://mvnrepository.com/artifact/com.google.code.gson/gson/2.12.1
+
+2. Configura en las propiedades (properties) de tu proyecto, en la pestaña
+libraries: Añade a Classpath el jar "gson-2.12.1.jar"
+
+3. Recompila (Build All) tu proyecto.
