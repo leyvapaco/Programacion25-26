@@ -25,6 +25,7 @@ public class LeerTrenesJSON {
                         new FileInputStream(fichero),
                         StandardCharsets.UTF_8))) {
 
+        	// Convierte el JSON en una List<Tren>; TypeToken evita que se pierda el tipo genérico
             List<Tren> lista = gson.fromJson(br,
                     new TypeToken<List<Tren>>(){}.getType());
 
