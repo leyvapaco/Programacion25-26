@@ -2,6 +2,8 @@ package ud7.tarea2;
 
 import java.io.*;
 
+//Escribe en el fichero 3 OBJETOS Tren
+
 public class NueveTren{
 	
 public static void main(String[] args) {

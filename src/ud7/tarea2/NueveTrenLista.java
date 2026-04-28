@@ -3,6 +3,7 @@ package ud7.tarea2;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+//Escribe en el fichero UNA LISTA que contiene 3 objetos Tren
 
 public class NueveTrenLista {
 
