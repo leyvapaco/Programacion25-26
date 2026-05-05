@@ -25,8 +25,8 @@ public class Dos {
 			        archivo.createNewFile(); // Crear el archivo si no existe
 			    }
 
-			    FileWriter fw = new FileWriter(archivo);
-			    BufferedWriter bw = new BufferedWriter(fw);
+			   
+			    BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
 
 			    bw.write("Nombre: " + nombre);
 			    bw.newLine();
