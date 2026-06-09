@@ -23,7 +23,7 @@ public final class Chirigota extends AgrupacionOficial implements Callejera{
 
 	@Override
 	public void cantar_la_presentacion() {
-		System.out.println("Cantando la presentación de la Chirigotacon nombre " + this.nombre);
+		System.out.println("Cantando la presentación de la Chirigota con nombre " + this.nombre);
 		
 	}
 
