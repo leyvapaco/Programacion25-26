@@ -1,4 +1,4 @@
-package ud9.objectdb;
+package ud9.objectdb.ejemplos;
 
 import javax.persistence.*;
 import java.util.List;
