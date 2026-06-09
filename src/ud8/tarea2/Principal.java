@@ -1,4 +1,4 @@
-package ud8.t2;
+package ud8.tarea2;
 
 import java.sql.*;
 import java.util.Scanner;
