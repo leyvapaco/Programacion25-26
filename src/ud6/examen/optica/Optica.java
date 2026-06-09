@@ -63,7 +63,7 @@ public class Optica {
 	}
 	
 	// Alternativa   sin usar la variable intermedia conjunto
-	public void deGafasAlternativo(Gafa gafa) {
+	public void delGafasAlternativo(Gafa gafa) {
 	    if (gafa == null) return;
 
 	    TipoGafa tipo = gafa.getTipo();

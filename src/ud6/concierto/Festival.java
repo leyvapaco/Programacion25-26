@@ -116,7 +116,7 @@ public class Festival {
                 ", recinto='" + cp + '\'' +
                 '}';
     }
-/* Comento los métodos de fichero, que aún no los hemos visto.
+
  
     public void cargarArtistas() {
         try (ObjectInputStream archivo = new ObjectInputStream(new FileInputStream("C:\\pruebaficheros\\artistas.dat"))) {
@@ -137,7 +137,7 @@ public class Festival {
             e.printStackTrace();
         }
         System.out.println("\nFichero creado!!");
-    }*/
+    }
 }
 
 
