@@ -1,9 +1,10 @@
-package ud9.objectdb;
+package ud9.objectdb.tarea.plantilla;
+
 
 import javax.persistence.*;
 import java.util.List;
 
-//DAO: Data Access Object
+// DAO: Data Access Object
 
 public class CancionDAO {
 
@@ -13,8 +14,8 @@ public class CancionDAO {
         this.em = em;
     }
 
-    // CREATE
-    public void insertar(String titulo, String artista, int reproducciones) {
+    // CREATE (ahora recibe un Artista)
+    public void insertar(String titulo, Artista artista, int reproducciones) {
         em.getTransaction().begin();
         em.persist(new Cancion(titulo, artista, reproducciones));
         em.getTransaction().commit();
@@ -27,11 +28,21 @@ public class CancionDAO {
 
     // READ (todos)
     public List<Cancion> listar() {
-        return em.createQuery("SELECT c FROM Cancion c ORDER BY c.id", Cancion.class).getResultList();
+        return em.createQuery("SELECT c FROM Cancion c ORDER BY c.id", Cancion.class)
+                 .getResultList();
     }
 
-    // UPDATE
-    public void actualizar(long id, String titulo, String artista, int reproducciones) {
+    // READ (todas las canciones de un artista)
+    public List<Cancion> listarPorArtista(long idArtista) {
+        return em.createQuery(
+                "SELECT c FROM Cancion c WHERE c.artista.id = :id ORDER BY c.titulo",
+                Cancion.class)
+                .setParameter("id", idArtista)
+                .getResultList();
+    }
+
+    // UPDATE (ahora recibe un Artista)
+    public void actualizar(long id, String titulo, Artista artista, int reproducciones) {
         em.getTransaction().begin();
         Cancion c = em.find(Cancion.class, id);
         if (c != null) {
@@ -50,3 +61,4 @@ public class CancionDAO {
         em.getTransaction().commit();
     }
 }
+
