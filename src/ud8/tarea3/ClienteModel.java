@@ -1,4 +1,4 @@
-package ud8.t3;
+package ud8.tarea3;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

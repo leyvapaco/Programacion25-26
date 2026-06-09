@@ -1,4 +1,4 @@
-package ud8.t3;
+package ud8.tarea3;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 //Otra opción es usar claves diferentes en la inserción (por ejemplo oficina 21, etc)
 
 
-public class main_transacciones {
+public class Principal {
     public static void main(String[] args) {
        Connection con=Conexion.conectar();
 
@@ -22,8 +22,8 @@ public class main_transacciones {
 
             OfficeModel.insertOffice(con,
                     new Office(
-                            "20",
-                            "Sevilla",
+                            "32",
+                            "Castilleja",
                             "+34 955 123 123",
                             "Avda Castilleja",
                             "default",
@@ -36,12 +36,12 @@ public class main_transacciones {
 
             EmployeeModel.insertEmployee(con,
                     new Employee(
-                            9020,
+                            9040,
                             "Yazmine",
                             "Lamal",
                             "8181",
                             "yl@classicmodelcars.com",
-                            "9",
+                            "30",
                             1102,
                             "Comercial"));
            
@@ -50,12 +50,12 @@ public class main_transacciones {
 
             EmployeeModel.insertEmployee(con,
                     new Employee(
-                            9021,
+                            9041,
                             "Morriña",
                             "José",
                             "8181",
                             "jm@classicmodelcars.com",
-                            "1",
+                            "30",
                             1102,
                             "Comercial"));
 
@@ -63,8 +63,8 @@ public class main_transacciones {
             
             ClienteModel.insertCliente(con,
                     new Cliente(
-                            520,
-                            "Alixar Store",
+                            541,
+                            "Alixar2 Store",
                             "apellido",
                             "nombre",
                             "609876543",
@@ -80,7 +80,7 @@ public class main_transacciones {
             System.out.println("Insertado cliente");
             
             ClienteModel.updateSalesRepEmployeeNumber(con,
-                    520,   // customerNumber. Cliente "Alixar Store" insertado previamente
+                    521,   // customerNumber. Cliente "Alixar Store" insertado previamente
                     9021   // salesRepEmployeeNumber. Empleado Yazmine Lamal
             );
 
@@ -93,11 +93,11 @@ public class main_transacciones {
          // Insertar pedido nuevo
             PedidoModel.insertPedido(con,
                     new Pedido(
-                            20001,               // orderNumber
+                            20002,               // orderNumber
                             "2026-05-21",        // orderDate
                             "2026-05-28",        // requiredDate
                             "In Process",        // status
-                            9021                 // customerNumber
+                            520                 // customerNumber
                     )
             );
 
@@ -105,7 +105,7 @@ public class main_transacciones {
          // Primera línea
             LineaPedidoModel.insertLineaPedido(con,
                     new LineaPedido(
-                            20001,        // orderNumber
+                            20002,        // orderNumber
                             "S10_1949",   // productCode
                             10,           // quantityOrdered
                             95.70,        // priceEach (MSRP real)
@@ -117,7 +117,7 @@ public class main_transacciones {
             // Segunda línea
             LineaPedidoModel.insertLineaPedido(con,
                     new LineaPedido(
-                            20001,
+                            20002,
                             "S10_4757",
                             5,
                             92.19,
